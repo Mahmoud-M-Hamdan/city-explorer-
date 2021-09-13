@@ -15,7 +15,8 @@ export class App extends Component {
       lat:"",
       lon:"",
       showData:false,
-      errorMessage: ''
+      errorMessage: '',
+      weatherData:[]
     }
   }
   handleLocation=(e)=>{
@@ -45,6 +46,15 @@ export class App extends Component {
 
       })
       
+    }).then(()=>{
+
+      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather-data?lat=${this.state.lat}&lon=${this.state.lon}`)
+      .then(res=>{
+      this.setState({
+weatherData:res.data
+
+      })
+      })
     })
     .catch(err => { 
       this.setState({errorMessage: err.message});
@@ -66,6 +76,7 @@ export class App extends Component {
                     lat={this.state.lat}
                     lon={this.state.lon}
                     url={this.state.url}
+                    weatherData= {this.state.weatherData}
                  
           />
        
@@ -88,7 +99,7 @@ export class App extends Component {
           </Alert>
   }
          
- 
+  
         
       </>
     )

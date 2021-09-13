@@ -17,7 +17,7 @@ use react , bootstrab , axios
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+Name of feature:
 
 Estimate of time needed to complete: 4h
 
