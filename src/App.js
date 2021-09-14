@@ -4,6 +4,7 @@ import Location from './Location';
 import SearchForm from './SearchForm';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Alert } from 'react-bootstrap';
 
 export class App extends Component {
@@ -16,6 +17,7 @@ export class App extends Component {
       lon:"",
       showData:false,
       errorMessage: '',
+      showError:false,
       weatherData:[]
     }
   }
@@ -26,6 +28,7 @@ export class App extends Component {
     })
   }
   handleSubmit=(e)=>{
+   
     console.log(`${process.env.REACT_APP_LOCATIONIQ_API_KEY}`);
     e.preventDefault();
     let config={
@@ -47,9 +50,11 @@ export class App extends Component {
       })
       
     }).then(()=>{
-
-      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather-data?lat=${this.state.lat}&lon=${this.state.lon}`)
+let city_name=this.state.city_name.split(',')[0]
+console.log(city_name)
+      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather-data?lat=${this.state.lat}&lon=${this.state.lon}&searchQuery=${city_name}`)
       .then(res=>{
+        console.log(res.data)
       this.setState({
 weatherData:res.data
 
@@ -57,7 +62,7 @@ weatherData:res.data
       })
     })
     .catch(err => { 
-      this.setState({errorMessage: err.message});
+      this.setState({errorMessage: err.message,showError:true});
     })
 
 
@@ -82,11 +87,9 @@ weatherData:res.data
        
         }
         
+       
          {
-         
-         
-         
-         this.state.errorMessage &&
+        this.state.showError &&
             <Alert variant="success">
             <Alert.Heading>Error !!</Alert.Heading>
             <p>
@@ -98,9 +101,6 @@ weatherData:res.data
             </p>
           </Alert>
   }
-         
-  
-        
       </>
     )
   }
