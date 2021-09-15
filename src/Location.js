@@ -42,7 +42,7 @@ this.props.movies.map(item=>{
         
 return <>
 <div className="laa">
-<h3> Title: {item.title}</h3>
+<h2> Title:<br/> {item.title}</h2>
 <h3> Average votes : {item.vote_average}</h3>
 <h3> Total votes : {item.vote_count}</h3>
 <h3> Popularity : {item.popularity}</h3>
