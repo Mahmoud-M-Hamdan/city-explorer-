@@ -41,12 +41,13 @@ this.props.movies.map(item=>{
     
         
 return <>
-<h3>{item.title}</h3>
-<h3>{item.vote_average}</h3>
-<h3>{item.vote_count}</h3>
-<h3>{item.popularity}</h3>
-<h3>{item.released_on}</h3>
-
+<div className="laa">
+<h3> Title: {item.title}</h3>
+<h3> Average votes : {item.vote_average}</h3>
+<h3> Total votes : {item.vote_count}</h3>
+<h3> Popularity : {item.popularity}</h3>
+<h3> Released on : {item.release_date}</h3>
+</div>
 
 </>
 
