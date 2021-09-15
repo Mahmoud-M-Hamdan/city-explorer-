@@ -58,7 +58,7 @@ export class App extends Component {
     }).catch(err => { 
       this.setState({errorMessage: err.message,showError:true});
     }).then(() => {
-      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather?lat=${this.state.lat}&lon=${this.state.lon}`)
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/weather?lat=${this.state.lat}&lon=${this.state.lon}`)
         .then(res => {
           console.log(res.data)
           this.setState({
@@ -73,7 +73,7 @@ export class App extends Component {
       .then(() => {
         axios
           .get(
-            `http://${process.env.REACT_APP_BACKEND_URL}/movie?country_code=${this.state.country_code.toUpperCase()}`
+            `${process.env.REACT_APP_BACKEND_URL}/movie?country_code=${this.state.country_code.toUpperCase()}`
           )
           .then((res) => {
             this.setState({
