@@ -1,12 +1,13 @@
 
 import React, { Component } from 'react';
-import Location from './Location';
+import Weather from './Weather';
 import SearchForm from './SearchForm';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import { Alert } from 'react-bootstrap';
+import Movies from './Movies';
 
 export class App extends Component {
   constructor(props) {
@@ -55,8 +56,8 @@ export class App extends Component {
 
       })
 
-    }).catch(err => { 
-      this.setState({errorMessage: err.message,showError:true});
+    }).catch(err => {
+      this.setState({ errorMessage: err.message, showError: true });
     }).then(() => {
       axios.get(`${process.env.REACT_APP_BACKEND_URL}/weather?lat=${this.state.lat}&lon=${this.state.lon}`)
         .then(res => {
@@ -93,25 +94,29 @@ export class App extends Component {
   render() {
     return (
       <>
+      <div className="headeer">
         <h1>Welcome to City explorer</h1>
         <SearchForm handleLocation={this.handleLocation} handleSubmit={this.handleSubmit} getMap={this.getMap} />
-        {
+        </div>
+
+<div className="grids">        {
           this.state.showData &&
-          <Location city_name={this.state.city_name}
+          <Weather city_name={this.state.city_name}
             type={this.state.type}
             lat={this.state.lat}
             lon={this.state.lon}
             url={this.state.url}
             weatherData={this.state.weatherData}
-            movies={this.state.movies}
-
 
           />
 
         }
-        
+        {
+          this.state.showData &&
+          < Movies movies={this.state.movies} />
 
-
+        }
+        </div>
         {
           this.state.showError &&
           <Alert variant="success">

@@ -1,28 +1,45 @@
 # city-explorer
 
-**Author**: Mahmoud Hamdan
+*Author**: Mahmoud Hamdan
+
+
 **Version**: 1.0.0 
 
 ## Overview
-the user can search for any location and take the let and the lon and the map of it 
+the user can search on any country and will take the lon and let and the map and the weather description and the  popular movies in this country 
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+creat a new react app.
+link it with github.
+create the components that allow you to view the form and the information and import them to the app.js.
+Use locationIq api to git your request.
 
 ## Architecture
-use react , bootstrab , axios
-## Change Log
+React , Jquery , Bootstrap , jxs ,JS, dotenv, nodeJS, nodemon, express.
 
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+duha.Abughazleh
 
-Name of feature:
 
-Estimate of time needed to complete: 4h
+Name of feature:lab 6
 
-Start time: 4pm
+Estimate of time needed to complete: 3
 
-Finish time: 10pm
+Start time: 2
 
-Actual time needed to complete: 6h
+Finish time: 11
+
+Actual time needed to complete: 9
+
+__________________________________
+
+Name of feature:lab 7
+
+Estimate of time needed to complete: 3
+
+Start time: 2
+
+Finish time: 10
+
+Actual time needed to complete: 8

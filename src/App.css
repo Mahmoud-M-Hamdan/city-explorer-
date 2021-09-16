@@ -1,6 +1,6 @@
 body {
   
-  margin-left: 30%;
+  
   background-image: url(https://static.vecteezy.com/system/resources/thumbnails/002/007/803/original/geography-class-background-free-video.jpg);
 }
 
@@ -8,7 +8,7 @@ body {
   box-shadow: inset;
   background-color: rgb(21, 151, 151);
   margin-top: 60px;
- 
+ width: 500px;
   
 }
 .card:hover{
@@ -27,4 +27,33 @@ h2{color: rgb(0, 0, 0)}
   padding: 10px;
   margin-bottom: 20px;
 }
+
+.grids{
+display: grid;
+grid-template-columns: auto auto;
+justify-content: space-evenly;
+
+
+}
+
+.headeer{
+  
+ 
+  margin-left: 35%;
+  margin-top: 30px;
+  
+}
+
+
+.card-body {
+  display: grid;
+  grid-template-rows: max-content;
+}
+
+.cb{ 
+  background-color: #ffb660;
+  padding: 10px;
+  margin-bottom: 20px;
+align-items: center;
+padding-top: 30%;}
 
