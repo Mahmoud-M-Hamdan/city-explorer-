@@ -23,8 +23,8 @@ export class Weather extends Component {
 
                                 return <>
                                     <div className="cb">
-                                        <h3>{item.date}</h3>
-                                        <h3>{item.description}</h3>
+                                        <h3>{item.time}</h3>
+                                        <h3>{item.forecast}</h3>
                                     </div>
                                 </>
 

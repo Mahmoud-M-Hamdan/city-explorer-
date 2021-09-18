@@ -9,6 +9,7 @@ body {
   background-color: rgb(21, 151, 151);
   margin-top: 60px;
  width: 500px;
+ height: min-content;
   
 }
 .card:hover{
@@ -55,5 +56,5 @@ justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 20px;
 align-items: center;
-padding-top: 30%;}
+}
 
